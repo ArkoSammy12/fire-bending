@@ -4,7 +4,7 @@ This is a Fabric Minecraft server-side mod that allows server administrators to 
 
 ## Fire Sources
 
-Fire blocks produced by lightning, lava, or flint-and-steel are now their own fire blocks. The mod adds 3 new gamerules that lets you configure the fire tick delay of each fire source individually:
+Fire blocks produced by lightning, lava, or flint-and-steel are now their own fire blocks. The mod adds 3 new gamerules that let you configure the fire tick delay of each fire source individually:
 
 - `/gamerule lightningFireTickDelay <integer-argument>`
 - `/gamerule lavaFireTickDelay <integer-argument>`
