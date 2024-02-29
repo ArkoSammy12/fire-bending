@@ -3,7 +3,7 @@
 	"id": "fire-bending",
 	"version": "${version}",
 	"name": "Fire Bending",
-	"description": "A Minecraft Fabric server-side mod that allows for more customization on the behaviour of fire",
+	"description": "A Minecraft Fabric server-side mod that allows for more customization on the behavior of fire.",
 	"authors": [
 		"ArkoSammy12"
 	],

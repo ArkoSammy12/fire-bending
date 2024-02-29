@@ -24,7 +24,7 @@ public class FireBending implements ModInitializer {
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 	public static final int DEFAULT_TICK_DELAY = 30;
 	public static final GameRules.Key<GameRules.BooleanRule> DO_TICK_FIRE_ONLY_WHEN_PLAYER_NEARBY = GameRuleRegistry.register("doTickFireOnlyWhenPlayerNearby", GameRules.Category.UPDATES, GameRuleFactory.createBooleanRule(false));
-	public static final GameRules.Key<GameRules.IntRule> TICK_FIRE_WHEN_PLAYER_NEARBY_DISTANCE = GameRuleRegistry.register("tickFireWhenPlayerNearbyDistance", GameRules.Category.UPDATES, GameRuleFactory.createIntRule(30));
+	public static final GameRules.Key<GameRules.IntRule> TICK_FIRE_WHEN_PLAYER_NEARBY_DISTANCE = GameRuleRegistry.register("tickFireWhenPlayerNearbyDistance", GameRules.Category.UPDATES, GameRuleFactory.createIntRule(30, 1));
 
 	@Override
 	public void onInitialize() {
