@@ -4,6 +4,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
+import xd.arkosammy.firebending.FireBending;
 
 public class FlintAndSteelFireBlock extends CustomFireBlock {
 
@@ -28,7 +29,7 @@ public class FlintAndSteelFireBlock extends CustomFireBlock {
 
     @Override
     public int getTickDelay(World world) {
-        return doTickFire(world) ? 30 + world.getRandom().nextInt(world.getGameRules().getInt(this.getFireSource().getGameRule())) : 30 + world.getRandom().nextInt(10);
+        return doTickFire(world) ? world.getGameRules().getInt(this.getFireSource().getGameRule()) + world.getRandom().nextInt(10) : FireBending.DEFAULT_TICK_DELAY + world.getRandom().nextInt(10);
     }
 
 }
