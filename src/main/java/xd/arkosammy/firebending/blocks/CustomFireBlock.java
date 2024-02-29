@@ -19,15 +19,11 @@ public abstract class CustomFireBlock extends FireBlock implements PolymerBlock,
     }
 
     public static BlockState getState(BlockView world, BlockPos pos, FireSource fireSource, Supplier<BlockState> originalFireStateProvider) {
-        BlockState normalFireState = originalFireStateProvider.get();
-        if(normalFireState.isOf(Blocks.SOUL_FIRE)){
-            return normalFireState;
+        BlockState state = originalFireStateProvider.get();
+        if(state.isOf(Blocks.SOUL_FIRE)){
+            return state;
         }
-        return switch (fireSource) {
-            case LIGHTNING -> ((FireBlockAccessor) FireSource.LIGHTNING.getBlock()).fire_bending$getStateForPosition(world, pos);
-            case FLINT_AND_STEEL -> ((FireBlockAccessor) FireSource.FLINT_AND_STEEL.getBlock()).fire_bending$getStateForPosition(world, pos);
-            case LAVA -> ((FireBlockAccessor) FireSource.LAVA.getBlock()).fire_bending$getStateForPosition(world, pos);
-        };
+        return ((FireBlockAccessor) fireSource.getBlock()).fire_bending$getStateForPosition(world, pos);
     }
 
     @Override
@@ -40,7 +36,7 @@ public abstract class CustomFireBlock extends FireBlock implements PolymerBlock,
         return this.getPolymerBlock(state).getStateWithProperties(state);
     }
 
-    public abstract FireSource getFireSource();
+    abstract FireSource getFireSource();
 
     public boolean doTickFire(World world) {
         return world.getGameRules().getInt(this.getFireSource().getGameRule()) >= 0;
@@ -51,12 +47,12 @@ public abstract class CustomFireBlock extends FireBlock implements PolymerBlock,
     }
 
     @Override
-    public BlockState getStateForPosition(BlockView world, BlockPos pos) {
+    protected BlockState getStateForPosition(BlockView world, BlockPos pos) {
         return this.getStateWithProperties(super.getStateForPosition(world, pos));
     }
 
     @Override
-    public BlockState getStateWithAge(WorldAccess world, BlockPos pos, int age) {
+    protected BlockState getStateWithAge(WorldAccess world, BlockPos pos, int age) {
         BlockState state = getState(world, pos, this.getFireSource(), () -> AbstractFireBlock.getState(world, pos));
         if(!(state.getBlock() instanceof FireBlock)){
             return state;

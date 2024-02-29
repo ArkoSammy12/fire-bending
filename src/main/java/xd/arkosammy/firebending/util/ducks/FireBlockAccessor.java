@@ -8,4 +8,6 @@ public interface FireBlockAccessor {
 
     BlockState fire_bending$getStateForPosition(BlockView world, BlockPos pos);
 
+    void fire_bending$clearBurnAndSpreadChances();
+
 }

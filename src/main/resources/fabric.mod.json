@@ -15,7 +15,7 @@
 	"icon": "assets/fire-bending/icon.png",
 	"environment": "server",
 	"entrypoints": {
-		"server": [
+		"main": [
 			"xd.arkosammy.firebending.FireBending"
 		]
 	},

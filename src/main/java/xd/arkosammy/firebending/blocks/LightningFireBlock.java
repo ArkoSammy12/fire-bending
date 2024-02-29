@@ -2,12 +2,12 @@ package xd.arkosammy.firebending.blocks;
 
 public final class LightningFireBlock extends CustomFireBlock {
 
-    public LightningFireBlock(Settings settings) {
+    LightningFireBlock(Settings settings) {
         super(settings);
     }
 
     @Override
-    public FireSource getFireSource() {
+    protected FireSource getFireSource() {
         return FireSource.LIGHTNING;
     }
 

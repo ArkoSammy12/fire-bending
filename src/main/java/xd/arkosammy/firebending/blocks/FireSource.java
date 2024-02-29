@@ -29,11 +29,11 @@ public enum FireSource {
         return this.block;
     }
 
-    public Identifier getId() {
+    Identifier getId() {
         return this.id;
     }
 
-    public GameRules.Key<GameRules.IntRule> getGameRule() {
+    GameRules.Key<GameRules.IntRule> getGameRule() {
         return this.gameRule;
     }
 
