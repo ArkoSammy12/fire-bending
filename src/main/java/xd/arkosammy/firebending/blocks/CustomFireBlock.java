@@ -7,6 +7,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
+import xd.arkosammy.firebending.FireBending;
 import xd.arkosammy.firebending.util.ducks.FireBlockAccessor;
 
 import java.util.function.Supplier;
@@ -41,13 +42,17 @@ public abstract class CustomFireBlock extends FireBlock implements PolymerBlock,
 
     public abstract FireSource getFireSource();
 
-    public abstract boolean doTickFire(World world);
+    public boolean doTickFire(World world) {
+        return world.getGameRules().getInt(this.getFireSource().getGameRule()) >= 0;
+    }
 
-    public abstract int getTickDelay(World world);
+    public int getTickDelay(World world) {
+        return doTickFire(world) ? world.getGameRules().getInt(this.getFireSource().getGameRule()) + world.getRandom().nextInt(10) : FireBending.DEFAULT_TICK_DELAY + world.getRandom().nextInt(10);
+    }
 
     @Override
     public BlockState getStateForPosition(BlockView world, BlockPos pos) {
-        return super.getStateForPosition(world, pos);
+        return this.getStateWithProperties(super.getStateForPosition(world, pos));
     }
 
     @Override
