@@ -1,0 +1,3 @@
+accessWidener v2 named
+
+extendable method net/minecraft/block/FireBlock getStateWithAge (Lnet/minecraft/world/WorldAccess;Lnet/minecraft/util/math/BlockPos;I)Lnet/minecraft/block/BlockState;

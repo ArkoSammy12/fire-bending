@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "package": "xd.arkosammy.firebending.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "FireBlockMixin",
+    "FlintAndSteelItemMixin",
+    "LavaFluidMixin",
+    "LightningEntityMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+	}
+}
