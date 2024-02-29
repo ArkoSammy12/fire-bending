@@ -23,7 +23,7 @@ Furthermore, the mod adds two new gamerules:
 ## Flammable blocks blacklist
 
 Finally, the mod offers a configuration file, found at `./config/fire-bender-config.json`, where the user can configure a list for blocks that shouldn't be flammable.
-You can add block identifier entries to the `flammable_blocks_blacklist` array, and the reload the config using the command `/fire-bender reload_config`.
+You can add block identifier entries to the `flammable_blocks_blacklist` array, and then reload the config using the command `/fire-bender reload_config`.
 
 ```json
 {
