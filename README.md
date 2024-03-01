@@ -4,11 +4,13 @@ This is a Fabric Minecraft server-side mod that allows server administrators to 
 
 ## Fire Sources
 
-Fire blocks produced by lightning, lava, or flint-and-steel are now their own fire blocks. The mod adds 3 new gamerules that let you configure the fire tick delay of each fire source individually:
+Fire blocks produced by different sources are now their own fire blocks. The mod adds new gamerules that let you configure the fire tick delay of each fire source individually:
 
 - `/gamerule lightningFireTickDelay <integer-argument>`
 - `/gamerule lavaFireTickDelay <integer-argument>`
 - `/gamerule flintAndSteelFireTickDelay <integer-argument>`
+- `gamerule explosionFireTickDelay <integer-argument>`
+- `/gamerule fireChargeFireTickDelay <integer-argument>`
 
 The integer argument supplied to the gamerule, will modify the fire tick delay of the corresponding fire source, using the formula `tickDelay = argument + RandomNumber(0, 10)`. Additionally, setting this value to `-1` disables fire ticking for that fire source.
 All of these gamerules have the default value of `30`.
@@ -17,7 +19,7 @@ All of these gamerules have the default value of `30`.
 
 Furthermore, the mod adds two new gamerules:
 
-- `/gamerule doTickFireOnlyWhenPlayerNearby <boolean-argument>`: This gamerule toggles whether fire blocks should tick only when a player is within a certain user-configurable distance. This is `false` by default.
+- `/gamerule doTickFireOnlyWhenPlayerNearby <boolean-argument>`: This gamerule toggles whether fire blocks should tick only when a player is within a certain user-configurable distance and fire ticking is enabled for the source of the fire. This is `false` by default.
 - `/gamerule tickFireWhenPlayerNearbyDistance <integer-argument>` This gamerule sets the distance at which a player has to be in order for fire to tick, if the `doTickFireOnlyWhenPlayerNearby` gamerule is enabled. This is `30` by default, and the minimum value is `1`.
 
 ## Flammable blocks blacklist
