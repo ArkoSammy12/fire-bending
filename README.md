@@ -9,7 +9,7 @@ Fire blocks produced by different sources are now their own fire blocks. The mod
 - `/gamerule lightningFireTickDelay <integer-argument>`
 - `/gamerule lavaFireTickDelay <integer-argument>`
 - `/gamerule flintAndSteelFireTickDelay <integer-argument>`
-- `gamerule explosionFireTickDelay <integer-argument>`
+- `/gamerule explosionFireTickDelay <integer-argument>`
 - `/gamerule fireChargeFireTickDelay <integer-argument>`
 
 The integer argument supplied to the gamerule, will modify the fire tick delay of the corresponding fire source, using the formula `tickDelay = argument + RandomNumber(0, 10)`. Additionally, setting this value to `-1` disables fire ticking for that fire source.
