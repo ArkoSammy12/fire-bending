@@ -23,7 +23,6 @@ import xd.arkosammy.firebending.util.ducks.FireBlockAccessor;
 
 import java.util.Arrays;
 
-@Debug(export = true)
 @Mixin(FireBlock.class)
 public abstract class FireBlockMixin extends AbstractFireBlock implements FireBlockAccessor {
 

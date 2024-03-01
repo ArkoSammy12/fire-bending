@@ -19,7 +19,6 @@ public enum FireSource {
     LAVA("lava_fire_block", new LavaFireBlock(FabricBlockSettings.copyOf(Blocks.FIRE)), GameRuleRegistry.register("lavaFireTickDelay", GameRules.Category.UPDATES, GameRuleFactory.createIntRule(FireBending.DEFAULT_TICK_DELAY, -1))),
     FLINT_AND_STEEL("flint_and_steel_fire_block", new FlintAndSteelFireBlock(FabricBlockSettings.copyOf(Blocks.FIRE)), GameRuleRegistry.register("flintAndSteelFireTickDelay", GameRules.Category.UPDATES, GameRuleFactory.createIntRule(FireBending.DEFAULT_TICK_DELAY, -1))),
     EXPLOSION("explosion_fire_block", new ExplosionFireBlock(FabricBlockSettings.copyOf(Blocks.FIRE)), GameRuleRegistry.register("explosionFireTickDelay", GameRules.Category.UPDATES, GameRuleFactory.createIntRule(FireBending.DEFAULT_TICK_DELAY, -1))),
-    
     FIRE_CHARGE("fire_charge_fire_block", new FireChargeFireBlock(FabricBlockSettings.copyOf(Blocks.FIRE)), GameRuleRegistry.register("fireChargeFireTickDelay", GameRules.Category.UPDATES, GameRuleFactory.createIntRule(FireBending.DEFAULT_TICK_DELAY, -1)));
 
     private final FireBlock block;
