@@ -1,0 +1,10 @@
+{
+  "replace" : false,
+  "values" : [
+    "fire-bending:lightning_fire_block",
+    "fire-bending:lava_fire_block",
+    "fire-bending:flint_and_steel_fire_block",
+    "fire-bending:explosion_fire_block",
+    "fire-bending:fire_charge_fire_block"
+  ]
+}

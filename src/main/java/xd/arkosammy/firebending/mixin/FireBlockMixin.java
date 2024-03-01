@@ -55,10 +55,9 @@ public abstract class FireBlockMixin extends AbstractFireBlock implements FireBl
         if(!(((FireBlock) (Object) this) instanceof CustomFireBlock customFireBlock)) {
             return original;
         }
-        if(world.getGameRules().getBoolean(FireBending.DO_TICK_FIRE_ONLY_WHEN_PLAYER_NEARBY)) {
-            return isPlayerWithinDistanceOfFire(pos, world);
-        }
-        return customFireBlock.doTickFire(world);
+        boolean doTickFireOnlyWhenPlayerNearby = world.getGameRules().getBoolean(FireBending.DO_TICK_FIRE_ONLY_WHEN_PLAYER_NEARBY);
+        boolean doFireTick = customFireBlock.doTickFire(world);
+        return doTickFireOnlyWhenPlayerNearby ? doFireTick && isPlayerWithinDistanceOfFire(pos, world) : doFireTick;
     }
 
     @WrapOperation(method = "registerDefaultFlammables", at = @At(value = "INVOKE", target = "Lnet/minecraft/block/FireBlock;registerFlammableBlock(Lnet/minecraft/block/Block;II)V"))
