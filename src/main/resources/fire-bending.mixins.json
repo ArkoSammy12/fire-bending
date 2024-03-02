@@ -3,6 +3,7 @@
   "package": "xd.arkosammy.firebending.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+    "DispenserBehavior$10Mixin",
     "ExplosionMixin",
     "FireBlockMixin",
     "FireChargeItemMixin",
