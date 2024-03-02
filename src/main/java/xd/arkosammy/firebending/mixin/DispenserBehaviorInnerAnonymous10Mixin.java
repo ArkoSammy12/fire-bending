@@ -12,7 +12,7 @@ import xd.arkosammy.firebending.blocks.FireSource;
 
 // Target inner anonymous class of type FallibleItemDispenserBehavior that corresponds to the registration of the flint and steel item dispenser behavior
 @Mixin(targets = "net.minecraft.block.dispenser.DispenserBehavior$10")
-public abstract class DispenserBehavior$10Mixin {
+public abstract class DispenserBehaviorInnerAnonymous10Mixin {
 
     @WrapOperation(method = "dispenseSilently", at = @At(value = "INVOKE", target = "Lnet/minecraft/block/AbstractFireBlock;getState(Lnet/minecraft/world/BlockView;Lnet/minecraft/util/math/BlockPos;)Lnet/minecraft/block/BlockState;"))
     private BlockState modifyFireSpawned(BlockView world, BlockPos pos, Operation<BlockState> original){
