@@ -27,13 +27,8 @@ public abstract class CustomFireBlock extends FireBlock implements PolymerBlock,
     }
 
     @Override
-    public Block getPolymerBlock(BlockState state) {
-        return Blocks.FIRE;
-    }
-
-    @Override
     public BlockState getPolymerBlockState(BlockState state) {
-        return this.getPolymerBlock(state).getStateWithProperties(state);
+        return Blocks.FIRE.getStateWithProperties(state);
     }
 
     abstract FireSource getFireSource();
